@@ -33,51 +33,107 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3-colors-flat.css">
    </head> 
 
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>App6---HTML5-Canvas</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="w3-colors-flat.css">
+  
+  <style> 
+    body {
+      margin: 0em;
+    }
+    .page {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      overflow-y: auto;
+      z-index: 0;
+      background-color: hsl(0,0%,100%);
+    }
+    .page:target {
+      left: 0vw;
+      z-index: 1;
+    }
+    canvas {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border: 1px solid #000;
+      display: block;
+      margin: auto;
+    }
+    .button-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
 
-<script>
-var docMod = document.lastModified; // loads last modified time stamp into docMod variable
-alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
-console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
-</script>
+  <script>
+    let ctx;
+    let canvas;
 
-<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
-</canvas>
+    window.onload = function () {
+      var docMod = document.lastModified;
+      alert("This file last modified " + docMod);
+      console.log("This file last modified " + docMod);
 
-<style>	
-.body {
-     margin: 0em;
-}
-.page {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -100vw;
-    overflow-y: auto;
-    z-index: 0;
-    background-color: hsl(0,0%,100%);
-}
-  .page:target {
-    left: 0vw;
-    z-index: 1;
-}
-</style>
+      canvas = document.getElementById("myCanvas");
+      ctx = canvas.getContext("2d");
+    }
+
+    function drawRect() {
+      ctx.fillStyle = "#00BFFF";
+      ctx.fillRect(30, 30, 120, 60);
+    }
+
+    function drawName() {
+      ctx.font = "20px Arial";
+      ctx.fillStyle = "#000";
+      ctx.fillText("Your Name", 40, 120);
+    }
+
+    function drawImage() {
+      const img = new Image();
+      img.onload = () => ctx.drawImage(img, 10, 140, 100, 100);
+      img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png";
+    }
+
+    function clearCanvas() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  </script>
+</head> 
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>App6---HTML5-Canvas</h1>
-</div>
-	
-<div id="content" class="w3-container">
-	<p>Content goes here.</p>
-		
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
- 	
-	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+  <div id="header" class="w3-container w3-flat-carrot">
+    <h1>App6---HTML5-Canvas</h1>
+  </div>
 
-<footer class="w3-bottom w3-container w3-flat-carrot">
-	<p>DIY!</p>
-</footer>
+  <div id="content" class="w3-container">
+    <canvas id="myCanvas" width="400" height="300"></canvas>
 
+    <div class="button-container">
+      <button class="w3-button w3-flat-carrot" onclick="drawRect()">Draw Rectangle</button>
+      <button class="w3-button w3-flat-carrot" onclick="drawName()">Draw Name</button>
+      <button class="w3-button w3-flat-carrot" onclick="drawImage()">Draw Image</button>
+      <button class="w3-button w3-flat-carrot" onclick="clearCanvas()">Clear</button>
+    </div>
+
+    <p>Content goes here.</p>
+    <p>
+      The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+    </p>
+    <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+  </div>
+
+  <footer class="w3-bottom w3-container w3-flat-carrot">
+    <p>DIY!</p>
+  </footer>
 </body>
 </html>
