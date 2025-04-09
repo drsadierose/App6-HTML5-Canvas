@@ -73,41 +73,6 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       margin-top: 10px;
     }
   </style>
-
-  <script>
-    let ctx;
-    let canvas;
-
-    window.onload = function () {
-      var docMod = document.lastModified;
-      alert("This file last modified " + docMod);
-      console.log("This file last modified " + docMod);
-
-      canvas = document.getElementById("myCanvas");
-      ctx = canvas.getContext("2d");
-    }
-
-    function drawRect() {
-      ctx.fillStyle = "#00BFFF";
-      ctx.fillRect(30, 30, 120, 60);
-    }
-
-     function drawName() {
-      ctx.font = "20px Arial";
-      ctx.fillStyle = "#000";
-      ctx.fillText("Sadie", 40, 120);
-    }
-
-    function drawImage() {
-      const img = new Image();
-      img.onload = () => ctx.drawImage(img, 10, 140, 100, 100);
-      img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png";
-    }
-
-    function clearCanvas() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
-  </script>
 </head> 
 
 <body>
@@ -124,6 +89,58 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <button class="w3-button w3-flat-carrot" onclick="drawImage()">Draw Image</button>
       <button class="w3-button w3-flat-carrot" onclick="clearCanvas()">Clear</button>
     </div>
+
+    <p>Content goes here.</p>
+    <p>
+      The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin. This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+    </p>
+    <p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+  </div>
+
+  <footer class="w3-bottom w3-container w3-flat-carrot">
+    <p>DIY!</p>
+  </footer>
+
+  <script>
+    let ctx;
+    let canvas;
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var docMod = document.lastModified;
+      alert("This file last modified " + docMod);
+      console.log("This file last modified " + docMod);
+
+      canvas = document.getElementById("myCanvas");
+      ctx = canvas.getContext("2d");
+    });
+
+    function drawRect() {
+      if (!ctx) return;
+      ctx.fillStyle = "#00BFFF";
+      ctx.fillRect(30, 30, 120, 60);
+    }
+
+    function drawName() {
+      if (!ctx) return;
+      ctx.font = "20px Arial";
+      ctx.fillStyle = "#000";
+      ctx.fillText("Sadie", 40, 120);
+    }
+
+    function drawImage() {
+      if (!ctx) return;
+      const img = new Image();
+      img.onload = () => ctx.drawImage(img, 10, 140, 100, 100);
+      img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png";
+    }
+
+    function clearCanvas() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  </script>
+</body>
+</html>
 
     <p>Content goes here.</p>
     <p>
