@@ -91,9 +91,11 @@ canvas {
 var ctx = canvas.getContext("2d");
 	
 	function drawRectangle() {
-      ctx.Rect(50, 50, 200, 100); // Draw rectangle
+	   ctx.fillStyle = "red";
+      ctx.fill(50, 50, 200, 100); 
     }
 	function drawSadie() {
+	ctx.fillStyle = "purple";
       ctx.font = "30px Arial";
 	ctx.fillText("Sadie", 10, 50)
     }
