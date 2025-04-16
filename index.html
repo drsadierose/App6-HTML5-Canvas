@@ -74,7 +74,7 @@ canvas {
 </div>
 	
 <div id="content" class="w3-container">
-	<canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;">
+	<canvas id="canvas" width="300" height="300" style="border:1px solid #000000;">
 </canvas>
 	
 <div class="button-container">
@@ -92,7 +92,7 @@ var ctx = canvas.getContext("2d");
 	
 	function drawRectangle() {
 	   ctx.fillStyle = "red";
-      ctx.fill(50, 50, 200, 100); 
+      ctx.fillRect(50, 50, 200, 100); 
     }
 	function drawSadie() {
 	ctx.fillStyle = "purple";
@@ -106,7 +106,7 @@ var ctx = canvas.getContext("2d");
     }
 
 	function clearCanvas() {
-      ctx.Rect(0, 0, 200, 100)
+      canvas.width = canvas.width;
     }
 
 <script>
