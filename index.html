@@ -101,14 +101,12 @@ var ctx = canvas.getContext("2d");
     }
 
 	function loadBrain() {
-var c = document.getElementById("canvas");
-var ctx = c.getContext("2d");
-var img = document.getElementById("brain");
-ctx.drawImage(img, 30, 30);
+ var img = document.getElementById("brain");
+        ctx.drawImage(img, 10, 100, 200, 100);
     }
 
 	function clearCanvas() {
-      ctx.Rect(50, 50, 200, 100)
+      ctx.Rect(0, 0, 200, 100)
     }
 
 <script>
