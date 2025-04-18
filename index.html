@@ -74,7 +74,8 @@ canvas {
 </div>
 	
 <div id="content" class="w3-container">
-	<canvas id="canvas" width="300" height="300" style="border:1px solid #000000;">
+	<canvas id="c" width="300" height="300" style="border:1px solid #000000;">
+		
 </canvas>
 	
 <div class="button-container">
@@ -87,30 +88,30 @@ canvas {
   <img id="brain" src="https://imgs.search.brave.com/nP7gvzpLGcPTVKLCSjCJdlBeM_-w-Mre2CgMM8QGN6E/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvYnJhaW4vYnJh/aW5fUE5HMTYucG5n" class="hidden">
 	
 <script>
- var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
+ var canvas = document.getElementById("c");
+var ctx = c.getContext("2d");
 	
 	function drawRectangle() {
 	   ctx.fillStyle = "red";
       	ctx.fillRect(50, 50, 200, 100); 
-	var canvas = document.getElementById("canvas")	
+	var canvas = document.getElementById("c")	
     }
 	function drawSadie() {
 	ctx.fillStyle = "purple";
       ctx.font = "30px Arial";
 	ctx.fillText("Sadie", 10, 50)
-	var canvas = document.getElementById("canvas")	
+	var canvas = document.getElementById("c")	
     }
 
 	function loadBrain() {
  var img = document.getElementById("brain");
         ctx.drawImage(img, 10, 100, 200, 100);
-	var canvas = document.getElementById("canvas")	
+	var canvas = document.getElementById("c")	
     }
 
 	function clearCanvas() {
-      canvas.width=300;
-	var canvas = document.getElementById("canvas")	
+      c.width=300;
+	var canvas = document.getElementById("c")	
     }
 
 </script>
