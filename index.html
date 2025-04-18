@@ -84,7 +84,7 @@ canvas {
     <button onclick="clearCanvas()">Clear</button>
   </div>
 	
-  <img id="brain" src="https://imgs.search.brave.com/nP7gvzpLGcPTVKLCSjCJdlBeM_-w-Mre2CgMM8QGN6E/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvYnJhaW4vYnJh/aW5fUE5HMTYucG5n">
+  <img id="brain" src="https://imgs.search.brave.com/nP7gvzpLGcPTVKLCSjCJdlBeM_-w-Mre2CgMM8QGN6E/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvYnJhaW4vYnJh/aW5fUE5HMTYucG5n" class="hidden">
 	
 <script>
  var canvas = document.getElementById("canvas");
@@ -99,15 +99,18 @@ var ctx = canvas.getContext("2d");
 	ctx.fillStyle = "purple";
       ctx.font = "30px Arial";
 	ctx.fillText("Sadie", 10, 50)
+	var canvas = document.getElementById("canvas")	
     }
 
 	function loadBrain() {
  var img = document.getElementById("brain");
         ctx.drawImage(img, 10, 100, 200, 100);
+	var canvas = document.getElementById("canvas")	
     }
 
 	function clearCanvas() {
       canvas.width = canvas.width;
+	var canvas = document.getElementById("canvas")	
     }
 
 </script>
