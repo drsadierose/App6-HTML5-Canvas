@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 creating an app that can take a picture, display the picture, and do image analysis on the picture
  
 Known Issues:
-
+the brain below the canvas won't go away
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -109,7 +109,8 @@ var ctx = canvas.getContext("2d");
     }
 
 	function clearCanvas() {
-      canvas.width = canvas.width;
+      ctx.fillStyle = "white";
+      	ctx.fillCanvas(width="300" height="300" style="border:1px solid #000000;"); 
 	var canvas = document.getElementById("canvas")	
     }
 
