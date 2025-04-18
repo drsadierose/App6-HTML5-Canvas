@@ -75,7 +75,7 @@ canvas {
 	
 <div id="content" class="w3-container">
 	<canvas id="c" width="300" height="300" style="border:1px solid #000000;">
-		
+	<!-- creating canvas with border -->	
 </canvas>
 	
 <div class="button-container">
@@ -86,32 +86,35 @@ canvas {
   </div>
 	
   <img id="brain" src="https://imgs.search.brave.com/nP7gvzpLGcPTVKLCSjCJdlBeM_-w-Mre2CgMM8QGN6E/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wbmdp/bWcuY29tL3VwbG9h/ZHMvYnJhaW4vYnJh/aW5fUE5HMTYucG5n" class="hidden">
-	
+<!-- set image id to use later. I cant figure out how to make it hide! -->
+	<!-- Javascript section -->
 <script>
  var canvas = document.getElementById("c");
 var ctx = canvas.getContext("2d");
+	//get the canvas and use ctx so it lets me draw
 	
 	function drawRectangle() {
-	   ctx.fillStyle = "red";
-      	ctx.fillRect(50, 50, 200, 100); 
-		
+	   ctx.fillStyle = "red"; //fill it red
+      	ctx.fillRect(50, 50, 200, 100); //dimentions of rectange
+	//draw red rectange	
     }
 	function drawSadie() {
-	ctx.fillStyle = "purple";
-      ctx.font = "30px Arial";
-	ctx.fillText("Sadie", 10, 50)
+	ctx.fillStyle = "purple"; //make it purple
+      ctx.font = "30px Arial"; //font and thickness
+	ctx.fillText("Sadie", 10, 50) //size
+		//draw my name in purple
 	
     }
 
 	function loadBrain() {
  var img = document.getElementById("brain");
         ctx.drawImage(img, 10, 100, 200, 100);
-	
+	//draw img(defined above)
     }
 
 	function clearCanvas() {
       canvas.width=300;
-	
+	//clear canvas by resetting width
     }
 
 </script>
